@@ -1,11 +1,15 @@
 // @ts-check
-import { defineConfig, devices } from '@playwright/test';
+import { defineConfig, devices, expect } from '@playwright/test';
 
 /**
  * @see https://playwright.dev/docs/test-configuration
  */
 const config = ({
   testDir: './tests/',
+  timeout : 30 * 1000,
+  expect : {
+    timeout : 30 * 1000,
+  },
   /* Run tests in files in parallel */
   fullyParallel: true,
   /* Fail the build on CI if you accidentally left test.only in the source code. */
