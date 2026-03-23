@@ -5,10 +5,10 @@ test("Program 2 : nopcommerce Navigation and validation", async ({browser}) => {
     const context = await browser.newContext();
     const page = await context.newPage();
 
-    const MainPageTitle = "Automation Exercise";
+    const MainPageTitle = "STORE";
     const SignUpLoginTitle = "Automation Exercise - Signup / Login";
-    const SignupLoginLink = page.locator("i.fa-lock");
-    const NameField = page.locator("//input[@name='name']");
+    const SignupLink = page.locator("#signin2");
+    const NameField = page.locator("#sign-username");
     const EmailField = page.locator("//div[@class='signup-form']//input[@name='email']");
     const RegisterButton = page.locator("div.signup-form button.btn-default");
     const LoginForm = page.locator('.login-form');
@@ -26,12 +26,12 @@ test("Program 2 : nopcommerce Navigation and validation", async ({browser}) => {
     console.log("Email ID : " + Email);
     console.log("Password : " + password);
 
-    await page.goto("https://automationexercise.com/");
+    await page.goto("https://www.demoblaze.com/");
     await expect (page).toHaveTitle(MainPageTitle);
     await expect (page.locator(".carousel-inner").first()).toBeVisible();
 
-    await SignupLoginLink.click();
-    await expect (page).toHaveTitle(SignUpLoginTitle);
+    await SignupLink.click();
+    //await expect (page).toHaveTitle(SignUpLoginTitle);
     await NameField.fill(Name);
     await EmailField.fill(Email);
     await RegisterButton.click();
