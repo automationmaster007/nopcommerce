@@ -67,6 +67,6 @@ async function launchBrowser(browser){
 
 test('Patient Acknowledge', async({page:testPage})=>{
 page = testPage;
-await launchBrowser("https://demo.prestashop.com/#/en/front")
+await launchBrowser("https://demo.prestashop.com/#/en/front");
 
 })
