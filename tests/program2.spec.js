@@ -4,7 +4,6 @@ import { TIMEOUT } from 'dns';
 
 let page;
 
-
 async function clickElement(selector) {
   await page.click(selector);
 }
@@ -24,7 +23,6 @@ async function selectWard(wardName) {
   await page.click("#ContentPlaceHolder1_TabContainer1_TabPanel2_ddl_ward_Input");
   await page.fill("#ContentPlaceHolder1_TabContainer1_TabPanel2_ddl_ward_Input", wardName);
 }
-
 async function captureAlert() {
   return new Promise(resolve => {
     page.once('dialog', async dialog => {
@@ -67,6 +65,10 @@ async function launchBrowser(browser){
 
 test('Patient Acknowledge', async({page:testPage})=>{
 page = testPage;
-await launchBrowser("https://demo.prestashop.com/#/en/front");
-
+await launchBrowser("https://www.demoblaze.com/index.html");
+await clickElement("#login2")
+await sendKey("#loginusername", "bipinyadav30")
+await sendKey("#loginpassword", "123456")
+await clickElement("//button[text()='Log in']")
+await testPage.expect()
 })
