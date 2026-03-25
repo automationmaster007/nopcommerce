@@ -77,6 +77,8 @@ test.only("Program 2 : nopcommerce Navigation and validation", async ({browser})
         }
     }
 
+    //Push Branch Check
+
     //await LogOutLink.click();
     //await expect (SignInLink).toBeVisible();
 
